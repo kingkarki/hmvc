@@ -1,0 +1,19 @@
+# Redirect Rule 
+# Redirect 301 / #healthclinics.com
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /example/index.php [L]
+</IfModule>
+ 
+
+ <FilesMatch "\.(ttf|otf|eot)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>
+# END WordPress
